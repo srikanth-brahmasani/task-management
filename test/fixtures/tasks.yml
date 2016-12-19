@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  description: MyString
+  priority: 1
+  deadline: 2016-12-09 15:56:06
+  reminder: 2016-12-09
+  is_archieved: false
+  is_done: false
+
+two:
+  user_id: 1
+  description: MyString
+  priority: 1
+  deadline: 2016-12-09 15:56:06
+  reminder: 2016-12-09
+  is_archieved: false
+  is_done: false

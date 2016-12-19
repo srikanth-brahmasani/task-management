@@ -1,0 +1,21 @@
+<%= render 'tasks_header' %>
+<% if @done_tasks.any? %>
+    <ol class="tasks">
+      <% @done_tasks.each do |done_task| %>
+          <li id="<%= done_task.id %>">
+            <span class="content"><%= done_task.description %> </span>
+            <span class="priority">Priority:<%= done_task.priority %></span><br>
+
+
+            <%= link_to "Reopen Task", '/tasks/mark-as-done?' + {id:done_task.id}.to_param, method: :post %>
+            <%= link_to "Mark As Archive ", '/tasks/mark-as-archive?' + {id:done_task.id}.to_param, method: :post %>
+
+            <span class="timestamp">
+      Posted <%= time_ago_in_words(done_task.created_at) %> ago.
+    </span>
+          </li>
+      <% end %>
+
+    </ol>
+
+<% end %>

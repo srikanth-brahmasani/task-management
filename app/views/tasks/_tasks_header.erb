@@ -1,0 +1,18 @@
+
+<div class="stats">
+  <a href="<%= root_path %>">
+    Open Tasks
+  </a>
+  <a href="/tasks/done">
+    Done Tasks
+  </a>
+  <a href="/tasks/archive">
+    Archive Tasks
+  </a>
+
+  <% if current_user.admin? %>
+      <a href="/tasks/">
+        All Tasks
+      </a>
+  <% end %>
+</div>

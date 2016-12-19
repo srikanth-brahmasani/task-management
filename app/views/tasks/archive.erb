@@ -1,0 +1,17 @@
+<%= render 'tasks_header' %>
+<% if @archive_tasks.any? %>
+    <ol class="tasks">
+      <% @archive_tasks.each do |archive_task| %>
+          <li id="<%= archive_task.id %>">
+            <span class="content"><%= archive_task.description %> </span>
+            <span class="priority">Priority:<%= archive_task.priority %></span><br>
+
+            <span class="timestamp">
+      Posted <%= time_ago_in_words(archive_task.created_at) %> ago.
+    </span>
+          </li>
+      <% end %>
+
+    </ol>
+
+<% end %>

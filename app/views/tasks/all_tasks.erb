@@ -1,0 +1,21 @@
+
+<% if @all_tasks.any? %>
+    <div style="margin-bottom: 20px">
+    <%= link_to 'Download CSV list', tasks_path(format: :csv) %>
+    </div>
+    <ol class="tasks">
+      <% @all_tasks.each do |all_task| %>
+          <li id="<%= all_task.id %>">
+            <span class="content"><%= all_task.description %> </span>
+            <span class="priority">Priority:<%= all_task.priority %></span><br>
+            <span class="">User ID:<%= all_task.user_id %></span><br>
+
+            <span class="timestamp">
+      Posted <%= time_ago_in_words(all_task.created_at) %> ago.
+    </span>
+          </li>
+      <% end %>
+
+    </ol>
+
+<% end %>
