@@ -35,6 +35,15 @@ Untitled2::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
-  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+      :user_name => 'srikanth.brahmasani@gmail.com',
+      :password => '**************',
+      :domain => 'gmail.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
 end

@@ -1,5 +1,5 @@
 <%- headers = [ 'description', 'priority'] -%>
 <%= CSV.generate_line headers %>
-<%- @all_tasks.each do |task| -%>
+<%- @tasks.each do |task| -%>
     <%= CSV.generate_line([task.description, task.priority]) -%>
 <%- end -%>

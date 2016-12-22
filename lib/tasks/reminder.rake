@@ -1,21 +1,18 @@
-namespace :reminder do
-  desc ""
-  task :cron => :environment do
-    current_time = Time.now.utc
-    from_time = current_time
-    to_time = current_time + 1.hours
-    users = User.all
-    user_map = {}
-    users.each do |user|
-      user_map[user.id] = user.email
+namespace :db do
+  desc "Fill database with sample data"
+  task populate: :environment do
+    User.create!(name: "Example User",
+                 email: "example@railstutorial.org",
+                 password: "foobar",
+                 password_confirmation: "foobar")
+    99.times do |n|
+      name  = Faker::Name.name
+      email = "example-#{n+1}@railstutorial.org"
+      password  = "password"
+      User.create!(name: name,
+                   email: email,
+                   password: password,
+                   password_confirmation: password)
     end
-
-    tasks = Array(Tasks.where(reminder:from_time..to_time))
-    tasks.each do |task|
-      description = task.description
-      email = user_map[task.user_id]
-      Usermailer.reminder_notification(email, description)
-    end
-    puts "completed"
   end
 end

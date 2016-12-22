@@ -20,9 +20,15 @@ Untitled2::Application.routes.draw do
   match '/sessions',  to: 'sessions#create'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  match '/tasks/done', to: 'tasks#done'
-  match '/tasks/archive', to: 'tasks#archive'
+  # match '/tasks/done', to: 'tasks#done'
+  # match '/tasks/archive', to: 'tasks#archive'
   match '/tasks', to: 'tasks#all_tasks'
+
+  match '/api/get-email', to: 'users#get_regex_emails'
+
+  match '/tasks/:tag', :to => 'tasks#home', via: :get
+  # match '/tasks/:action_type', :to => 'tasks#update', via: :get
+
 
   match '/tasks/mark-as-done', to: 'tasks#mark_as_done'
   match '/tasks/mark-as-archive', to: 'tasks#mark_as_archive'

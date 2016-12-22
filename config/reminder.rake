@@ -10,6 +10,7 @@ namespace :reminder do
       user_map[user.id] = user.email
     end
 
+    #Read about n+1 queries and how you can avoid them
     tasks = Array(Tasks.where(reminder:from_time..to_time))
     tasks.each do |task|
       description = task.description

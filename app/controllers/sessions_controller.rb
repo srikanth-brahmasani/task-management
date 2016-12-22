@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
-  require 'user_utils'
-  include UserUtils
+
+
+
   def new
   end
 

@@ -19,6 +19,7 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails', '>= 0.6.21'
+gem 'jquery-ui-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -30,7 +31,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'faker', '1.0.1'
 gem 'mailgun-ruby', '~>1.0.2'
 gem 'whenever', :require => false
 gem 'jquery-rails'

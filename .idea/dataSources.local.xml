@@ -9,5 +9,10 @@
     <data-source name="Rails untitled2: test" uuid="843124e6-edf8-4f93-a2ff-cdd25619455b">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
+    <data-source name="Rails untitled2: production" uuid="b4845145-9518-4b6b-87ce-7e13f5db857b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <auth-required>false</auth-required>
+      <first-sync>true</first-sync>
+    </data-source>
   </component>
 </project>
